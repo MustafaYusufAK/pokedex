@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="poke_types.css" />
+    <link rel="stylesheet" href="roboto_font.css" />
+    <link rel="shortcut icon" href="img/fav.png" type="image/x-icon" />
+    <script src="script.js" defer></script>
+    <script src="templates.js" defer></script>
+    <script src="type_names.js"></script>
+</head>
+
+<body onload="getData()">
+    <header>
+        <a href="index.html">
+            <img class="poke-logo" src="img/poke-logo.png" alt="poke_logo" />
+        </a>
+        <form onsubmit="searchPokemon(); return false;">
+            <input required minlength="1" placeholder="Search for Pokemon" type="text" name="" id="search-input" />
+            <button class="search-button">
+                <img src="./img/magnify.png" alt="magnify" />
+            </button>
+        </form>
+        <div class="load-display">
+            <b id="loaded-Pokemons"></b> Pokemon geladen.
+        </div>
+    </header>
+    <label class="type-selector" for="type-selector">Select Pokemon Type:</label>
+    <select class="dropdown-type-selector" id="type-selector" onchange="filterByType()">
+        <option value="all">All Types</option> <img src="./img/pokemon-icons/grass.png" alt="">
+        <option value="grass">Grass</option>
+        <option value="water">Water</option>
+        <option value="poison">Poison</option>
+        <option value="fire">Fire</option>
+        <option value="flying">Flying</option>
+        <option value="bug">Bug</option>
+        <option value="normal">Normal</option>
+        <option value="electric">Electric</option>
+        <option value="ground">Ground</option>
+        <option value="fairy">Fairy</option>
+        <option value="fighting">Fighting</option>
+        <option value="psychic">Psychic</option>
+        <option value="rock">Rock</option>
+        <option value="steel">Steel</option>
+        <option value="ghost">Ghost</option>
+        <option value="ice">Ice</option>
+        <option value="dragon">Dragon</option>
+        <option value="dark">Dark</option>
+    </select>
+    <main id="main"></main>
+    <button id="back-button" class="d-none" onclick="reloadPage()">Back</button>
+    <a href="#">
+        <img class="d-none" id="scroll-up-button" src="./img/arrow-up.png" alt="arrow-up" />
+    </a>
+    <section>
+        <div onclick="closeOverlay()" id="overlay-bg" class="overlay-background d-none"></div>
+    </section>
+</body>
+
+</html>

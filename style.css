@@ -1,0 +1,477 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: roboto, sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(94 94 94);
+    ;
+}
+
+b,
+span {
+    text-transform: capitalize;
+}
+
+h3 {
+    margin: 12px 0;
+}
+
+form {
+    display: flex;
+    position: relative;
+}
+
+input {
+    font-size: 16px;
+    height: 36px;
+    border-radius: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: none;
+    margin-right: 4px;
+    outline: none;
+}
+
+.not-found-notification {
+    text-align: center;
+    margin: 10px;
+    font-weight: 500;
+    text-decoration-line: underline;
+}
+
+.search-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+#back-button {
+    cursor: pointer;
+    background-color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    color: rgb(95, 95, 95);
+    margin-bottom: 36px;
+}
+
+#back-button:hover {
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.5);
+}
+
+button img {
+    width: 16px;
+}
+
+header {
+    z-index: 99;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    background-color: rgb(76 75 75);
+    color: white;
+    border-bottom: solid;
+    border-bottom-color: rgb(70, 70, 70);
+}
+
+.poke-logo {
+    width: 150px;
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 36px;
+    color: white;
+}
+
+#scroll-up-button {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    position: fixed;
+    right: 16px;
+    bottom: 16px;
+    transition: transform 0.2s ease-in-out;
+    border-radius: 50%;
+    background-color: rgb(229, 229, 229);
+}
+
+#scroll-up-button:hover {
+    transform: scale(1.2);
+}
+
+.mini-card {
+    color: rgb(70, 70, 70);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 175px;
+    height: 225px;
+    border-radius: 36px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out;
+}
+
+.mini-card-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.mini-card b {
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.mini-card>img {
+    transition: transform 0.2s ease-in-out;
+}
+
+.mini-card:hover {
+    transform: scale(1.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+.pokemon-id {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.top-mini-card {
+    z-index: 1;
+    margin-bottom: -32px;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+}
+
+.bottom-mini-card {
+    z-index: 0;
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    background-image: url(./img/pokeball.png);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.overlay-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgb(21 20 20 / 80%);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#detailes-card {
+    width: 0px;
+    height: 700px;
+    transition: width 0.5s ease-in-out;
+    overflow: hidden;
+    border-radius: 36px;
+    position: relative;
+}
+
+#close-button {
+    width: 28px;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.glowUp {
+    box-shadow: 0 0 15px aqua;
+}
+
+.type-selector {
+    font-size: 24px;
+    font-weight: 500;
+    margin: 15px;
+}
+
+.dropdown-type-selector {
+    font-size: 16px;
+    height: 36px;
+    border-radius: 4px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: none;
+    outline: none;
+}
+
+.poke-ball-div {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.poke-img {
+    z-index: 1;
+    max-height: 100px;
+}
+
+.top-pokemon-img {
+    height: 65px;
+    width: 155px;
+}
+
+.bottom-pokemon-img {
+    height: 65px;
+    width: 155px;
+}
+
+.poke-ball-img {
+    height: 75px;
+    width: 100px;
+}
+
+.show {
+    width: 350px !important;
+}
+
+#card-header {
+    width: 350px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.img-type-box {
+    width: 320px;
+    display: flex;
+    justify-content: space-between;
+    transition: width 0.8s ease-in-out;
+}
+
+#card-types {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+
+.pokemon-type-icon {
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+    align-items: center;
+    display: flex;
+}
+
+#card-types>span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    border: 1px solid lightgray;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+#card-img {
+    width: 220px;
+    height: 250px;
+    text-align: center;
+}
+
+.lower-card {
+    width: 350px;
+    background-color: white;
+    border-top-left-radius: 36px;
+    border-top-right-radius: 36px;
+    padding: 16px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.4);
+}
+
+.lower-card-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.lower-card-header>span {
+    padding: 4px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.lower-card-header span:hover {
+    text-decoration: underline;
+}
+
+#info-box {
+    height: 290px;
+    margin: 8px 0;
+    overflow-y: auto;
+    text-transform: capitalize;
+}
+
+.move {
+    padding: 4px;
+    text-align: center;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    margin: 8px;
+}
+
+.arrow-box {
+    display: flex;
+    justify-content: space-around;
+}
+
+.arrow-box>img {
+    width: 36px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.d-none {
+    display: none;
+}
+
+.myProgress {
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    margin-bottom: 8px;
+    overflow-y: visible;
+}
+
+.myBar {
+    height: 18px;
+    display: flex;
+    justify-content: center;
+}
+
+#hp-bar {
+    background-color: rgb(255, 0, 0);
+}
+
+#attack-bar {
+    background-color: rgb(255, 165, 0);
+}
+
+#defense-bar {
+    background-color: rgb(0, 128, 0);
+}
+
+#special-attack-bar {
+    background-color: rgb(156, 0, 156);
+}
+
+#special-defense-bar {
+    background-color: rgb(52, 52, 255);
+}
+
+#speed-bar {
+    background-color: rgb(255, 255, 0);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(70, 70, 70);
+    border-radius: 3px;
+}
+
+@media (max-width: 650px) {
+    .poke-logo {
+        width: 100px;
+    }
+
+    .search-button {
+        position: absolute;
+        right: 0px;
+    }
+
+    input {
+        padding-right: 36px;
+        width: 204px;
+    }
+}
+
+@media (max-width: 530px) {
+    .load-display {
+        display: none;
+    }
+}
+
+@media (max-width: 375px) {
+    #detailes-card {
+        height: 650px;
+        width: 0;
+    }
+
+    #card-header {
+        width: 300px;
+    }
+
+    .img-type-box {
+        width: 280px;
+    }
+
+    #card-img {
+        width: 200px;
+        height: 200px;
+    }
+
+    .lower-card {
+        width: 300px;
+    }
+
+    .show {
+        width: 300px !important;
+    }
+}
